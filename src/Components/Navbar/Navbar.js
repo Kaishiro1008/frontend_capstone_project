@@ -40,11 +40,11 @@ const Navbar = () => {
     }
     useEffect(() => { 
       const storedemail = sessionStorage.getItem("email");
-      const storename = sessionStorage.getItem("name");
+      const storedname = sessionStorage.getItem("name");
 
       if (storedemail) {
             setIsLoggedIn(true);
-            setUsername(storename);
+            setUsername(storedemail);
           }
         }, []);
   return (
@@ -74,6 +74,11 @@ const Navbar = () => {
           <>
             <li>
                 Welcome, {username}
+            </li>
+            <li className="link">
+              <Link to="/instant-consultation">
+              <button className="btn2">Booking Consultation</button>
+              </Link>
             </li>
             <li className="link">
               <button className="btn2" onClick={handleLogout}>
